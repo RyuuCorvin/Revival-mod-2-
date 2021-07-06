@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "version": "0.2.4",
+    "name": "Revival Mod V2",
+    "description": "Unbeatable hack, unless there's some 1v100",
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "*://*.io/*",
+        "*://moomoo.io/*",
+        "*://dev.moomoo.io/*",
+        "*://sandbox.moomoo.io/*",
+        "*://*.moomoo.io/*",
+        "*://diep.io/*",
+        "*://www.google.com/recaptcha/*",
+        "*://ksw2-center.glitch.me/*",
+        "*://cdn.jsdelivr.net/npm/ntru@3.2.2/dist/*",
+        "*://ksw2-moomoo.glitch.me/*"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval' http://*.io/* https://*.io/* https://cdn.jsdelivr.net/npm/ntru@3.2.2/dist/* https://ksw2-center.glitch.me/* https://moomoo.io/* https://ksw2-moomoo.glitch.me/*; object-src 'self';",
+    "content_scripts": [
+        {
+            "matches": ["*://*.io/*"],
+            "js": ["executor.js"],
+            "run_at": "document_start"
+        }
+    ]
+}
